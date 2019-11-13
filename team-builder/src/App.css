@@ -1,5 +1,7 @@
-body {
+body,
+html {
   background-color: #282c34;
+  color: white;
 }
 
 .App {
@@ -15,17 +17,17 @@ body {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+/* 
 .form-container {
   border: 1px solid red;
   display: flex;
-  /* justify-content: center; */
-  /* align-content: center; */
-  /* flex-flow: column wrap; */
+  justify-content: center; 
+  align-content: center; 
+  flex-flow: column wrap;
   width: 300px;
   height: auto;
   padding: 50px;
-}
+} */
 
 input {
   width: 200px;
@@ -33,4 +35,15 @@ input {
   margin: 10px 5px;
   box-sizing: border-box;
   border-radius: 4px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.member-card {
+  color: white;
+  margin: 5%;
+  border: 2px solid red;
+  border-radius: 10px;
 }
