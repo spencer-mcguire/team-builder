@@ -4,7 +4,9 @@ import Form from "./components/Form";
 import MemberCard from "./components/MemberCard";
 
 function App() {
+  const [member, setMember] = useState({ name: "", email: "", role: "" });
   const [teamMemberList, setTeamMemberList] = useState([]);
+  const [memberToEdit, setMemberToEdit] = useState({});
 
   const addNewMember = member => {
     const newMember = {
@@ -15,13 +17,23 @@ function App() {
     };
     setTeamMemberList([...teamMemberList, newMember]);
   };
-  console.log(teamMemberList);
+
+  const edit = member => {
+    setMemberToEdit(member);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Team Members</h1>
       </header>
-      <Form addNewMember={addNewMember} />
+      <Form
+        addNewMember={addNewMember}
+        memberToEdit={memberToEdit}
+        edit={edit}
+        member={member}
+        setMember={setMember}
+      />
       <MemberCard teamMemberList={teamMemberList} />
     </div>
   );

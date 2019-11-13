@@ -8,6 +8,7 @@ const MemberCard = props => {
           <h2>{list.name}</h2>
           <p>{list.email}</p>
           <p>{list.role}</p>
+          <button onClick={props.edit}>EDIT</button>
         </div>
       ))}
     </div>

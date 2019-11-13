@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import "../App.css";
 
 const Form = props => {
-  const [member, setMember] = useState({ name: "", email: "", role: "" });
-
   const handleChange = e => {
-    setMember({ ...member, [e.target.name]: e.target.value });
+    props.setMember({ ...props.member, [e.target.name]: e.target.value });
   };
   const handleSubmit = e => {
     e.preventDefault();
-    props.addNewMember(member);
-    setMember({ name: "", email: "", role: "" });
+    props.addNewMember(props.member);
+    props.setMember({ name: "", email: "", role: "" });
   };
 
   return (
@@ -22,7 +20,7 @@ const Form = props => {
           type="text"
           name="name"
           onChange={handleChange}
-          value={member.name}
+          value={props.member.name}
         />
         <label htmlFor="email">Email:</label>
         <input
@@ -30,7 +28,7 @@ const Form = props => {
           type="text"
           name="email"
           onChange={handleChange}
-          value={member.email}
+          value={props.member.email}
         />
         <label htmlFor="role">Role:</label>
         <input
@@ -38,7 +36,7 @@ const Form = props => {
           type="text"
           name="role"
           onChange={handleChange}
-          value={member.role}
+          value={props.member.role}
         />
         <button type="submit">Submit</button>
       </form>
