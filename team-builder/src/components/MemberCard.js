@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const MemberCard = props => {
+  useEffect(() => {}, []);
   return (
-    <div>
+    <>
       {props.teamMemberList.map(list => (
         <div key={list.id} className="member-card">
-          <h2>{list.name}</h2>
+          <div className="title">
+            <h2>{list.name}</h2>
+          </div>
           <p>{list.email}</p>
           <p>{list.role}</p>
-          <button onClick={props.edit}>EDIT</button>
+          <button className="button" onClick={props.edit}>
+            EDIT
+          </button>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
